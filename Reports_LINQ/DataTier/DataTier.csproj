@@ -30,8 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +47,83 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="authors.cs">
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="clsFunctions.cs" />
+    <Compile Include="clsOther.cs" />
+    <Compile Include="discounts.cs">
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="employee.cs">
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jobs.cs">
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="publishers.cs">
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PubsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PubsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PubsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PubsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PubsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="pub_info.cs">
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="roysched.cs">
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sales.cs">
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stores.cs">
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="titleauthor.cs">
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="titles.cs">
+      <DependentUpon>PubsModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="PubsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PubsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="PubsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PubsModel.edmx</DependentUpon>
+      <LastGenOutput>PubsModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="PubsModel.edmx.diagram">
+      <DependentUpon>PubsModel.edmx</DependentUpon>
+    </None>
+    <None Include="PubsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PubsModel.edmx</DependentUpon>
+      <LastGenOutput>PubsModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
